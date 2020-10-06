@@ -1,0 +1,27 @@
+spring:
+  application.name: currency-exchange
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/exchange?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
+    username: root
+    password: root
+  jpa:
+    show-sql: true
+    database: MYSQL
+
+spring.liquibase:
+  change-log: classpath:database/changelog.yml
+  enabled: true
+
+info.application:
+  application-name: ${spring.application.name}
+  groupId: '@project.groupId@'
+  artifactId: '@project.artifactId@'
+  version: '@project.version@'
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health, loggers
+
