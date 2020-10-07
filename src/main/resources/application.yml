@@ -25,3 +25,12 @@ management:
       exposure:
         include: info, health, loggers
 
+
+exchangeclient.host: https://open.exchangerate-api.com
+
+feign.client.config:
+  default:
+    loggerLevel: full
+
+logging.level.feign.Logger: DEBUG
+logging.level.com.kotlin.training.currencyexchange.integration.ExchangeClient: DEBUG
